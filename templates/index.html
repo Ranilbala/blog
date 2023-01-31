@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ranil's Blog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/kube.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/custom.min.css' %}" />
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!-- Navigation -->
+	<div class="main-nav">
+		<div class="container">
+			<header class="group top-nav">
+				<nav class="navbar logo-w navbar-left" >
+					<a class="logo" href="{%url 'index'%}">Blog</a>
+				</nav>
+				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
+				    <span class="logo">Blog</span>
+				</div>
+			</header>
+		</div>
+	</div>
+
+	<!-- Introduction --> 
+	<div class="intro">
+		<div class="container">
+			<div class="units-row">
+			    <div class="unit-10">
+			    	<img class="img-intro" src="{% static 'img/avatar.png'%}" alt="avatar">
+			    </div>
+			    <div class="unit-90">
+			    	<p class="p-intro">Hello, Welcome to my blog.</p>
+			    </div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Content -->
+	
+	<div class="content">
+		{% for post in posts%}
+		<div class="container">
+			<!-- Post -->
+			<div class="post">
+				<!-- Heading -->
+				<a href="#"><h1>{{post.topic}}</h1></a>
+				<div class="unit-100">
+					<strong>Author:</strong> 
+					<a href="#">{{post.author}}</a>
+				</div>
+				<hr>
+				<div class="in-content">
+					<p>
+						{{post.data| truncatewords:20}}
+					</p>
+					<a class="read-more" href="#">Read more</a>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="units-row">
+			    <div class="unit-50">
+			    	<button class="btn btn-black"><i class="fa fa-arrow-left"></i> PREVIOUS</button>
+			    </div>
+			    <div class="unit-50">
+					<ul class="social list-flat right">
+						<li><a href="#"><i class="fa fa-send"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					</ul>
+			    </div>
+			</div>
+			<p class="text-centered foot-cp">
+	    		<a href="#">Copyright &copy; B Ranilbala All Rights Reserved</a>
+	    	</p>
+		</div>
+	</footer>
+
+	<!-- Javascript -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/kube.min.js' %}"></script>
+
+</body>
+</html>
