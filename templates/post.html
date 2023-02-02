@@ -1,0 +1,48 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/kube.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/custom.min.css' %}" />
+<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />
+<link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+
+<div class="main-nav">
+    <div class="container">
+        <header class="group top-nav">
+            <nav class="navbar logo-w navbar-left" >
+                <a class="logo" href="{% url 'index' %}">Blog</a>
+            </nav>
+            <div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
+                <span class="logo">Blog</span>
+            </div>
+        </header>
+    </div>
+</div>
+
+<div class="content">
+    <div class="container">
+        <!-- Post -->
+        <div class="post">
+            <!-- Heading -->
+            <h1>{{posts.topic}}</h1>
+            <div class="unit-100">
+                <strong>Author:</strong> 
+                <p>{{posts.author}}</p>
+            </div>
+            <hr>
+            <div class="in-content">
+                <p>
+                    {{posts.data}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p class="text-centered foot-cp">
+            <a href="#">Copyright &copy; B Ranilbala All Rights Reserved</a>
+        </p>
+    </div>
+</footer>

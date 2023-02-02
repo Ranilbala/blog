@@ -19,7 +19,7 @@
 		<div class="container">
 			<header class="group top-nav">
 				<nav class="navbar logo-w navbar-left" >
-					<a class="logo" href="{%url 'index'%}">Blog</a>
+					<a class="logo" href="{% url 'index' %}">Blog</a>
 				</nav>
 				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
 				    <span class="logo">Blog</span>
@@ -32,11 +32,8 @@
 	<div class="intro">
 		<div class="container">
 			<div class="units-row">
-			    <div class="unit-10">
-			    	<img class="img-intro" src="{% static 'img/avatar.png'%}" alt="avatar">
-			    </div>
 			    <div class="unit-90">
-			    	<p class="p-intro">Hello, Welcome to my blog.</p>
+			    	<p class="p-intro">Welcome to my blog, a space for connection and exploration.</p>
 			    </div>
 			</div>
 		</div>
@@ -60,7 +57,7 @@
 					<p>
 						{{post.data| truncatewords:20}}
 					</p>
-					<a class="read-more" href="#">Read more</a>
+					<a class="read-more" href="{% url 'post' post.id %}">Read more</a>
 				</div>
 			</div>
 		</div>
@@ -70,9 +67,9 @@
 	<footer>
 		<div class="container">
 			<div class="units-row">
-			    <div class="unit-50">
+			    <!-- <div class="unit-50">
 			    	<button class="btn btn-black"><i class="fa fa-arrow-left"></i> PREVIOUS</button>
-			    </div>
+			    </div> -->
 			    <div class="unit-50">
 					<ul class="social list-flat right">
 						<li><a href="#"><i class="fa fa-send"></i></a></li>
